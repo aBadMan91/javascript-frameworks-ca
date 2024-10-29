@@ -1,1 +1,1 @@
-# front-end-frameworks-ca
+# javascript-frameworks-ca
