@@ -1,14 +1,20 @@
 import React from "react";
-import { useFetchProducts } from "../../hooks/useFetchProducts";
+import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../../components/ProductCard";
 
 export function HomePage() {
-  const { data, loading, error } = useFetchProducts();
+  const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop");
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
+  if (isError) {
+    return <div>Error</div>;
+  }
 
   const products = Array.isArray(data.data) ? data.data : [];
+  console.log(products);
 
   return (
     <div>
