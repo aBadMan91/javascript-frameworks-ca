@@ -5,7 +5,9 @@ import { HeaderContainer, NavContainer } from "./index.styles";
 export function Header() {
   return (
     <HeaderContainer>
-      <h1>North Store</h1>
+      <Link to="/">
+        <h1>North Store</h1>
+      </Link>
       <NavContainer>
         <Link to="/">Home</Link>
         <Link to="/cart">Cart</Link>

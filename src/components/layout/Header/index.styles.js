@@ -7,6 +7,11 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 `;
 
 export const NavContainer = styled.nav`
