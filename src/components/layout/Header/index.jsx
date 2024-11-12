@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HeaderContainer, NavContainer } from "./index.styles";
+import { SearchBar } from "../../SearchBar";
 
 export function Header() {
   return (
@@ -8,10 +9,11 @@ export function Header() {
       <Link to="/">
         <h1>North Store</h1>
       </Link>
+      <SearchBar />
       <NavContainer>
         <Link to="/">Home</Link>
-        <Link to="/cart">Cart</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/cart">Cart</Link>
       </NavContainer>
     </HeaderContainer>
   );
