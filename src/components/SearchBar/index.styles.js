@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  padding: 0 20px;
 `;
 
 export const SearchInput = styled.input`
