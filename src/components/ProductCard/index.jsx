@@ -11,10 +11,10 @@ export function ProductCard({ product }) {
         <img src={product.image.url} alt={product.image.alt} />
       </styles.StyledLink>
       <p>{product.description}</p>
-      <p>{product.price}</p>
-      {isDiscounted && <p>Discounted Price:{product.discountedPrice}</p>}
+      <p>Price: {product.price}</p>
+      {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
       <styles.StyledLink to={`/product/${product.id}`}>
-        <p>View Product</p>
+        <styles.StyledButton>View Product</styles.StyledButton>
       </styles.StyledLink>
     </styles.ProductCardContainer>
   );

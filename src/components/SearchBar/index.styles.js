@@ -21,4 +21,5 @@ export const SearchResultItem = styled.div`
   padding: 10px;
   margin: 10px;
   border: 1px solid #000;
+  cursor: pointer;
 `;

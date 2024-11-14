@@ -6,6 +6,8 @@ export function ProductPage() {
   const { id } = useParams();
   const { data: product, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`);
 
+  const isDiscounted = product.discountedPrice && product.discountedPrice !== product.price;
+
   if (isLoading) {
     return <div>Loading</div>;
   }
@@ -20,7 +22,7 @@ export function ProductPage() {
       {product.image ? <img src={product.image.url} alt={product.image.alt} /> : <div>No image available</div>}
       <p>{product.description}</p>
       <p>Price: {product.price}</p>
-      <p>Discounted Price: {product.discountedPrice}</p>
+      {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
     </div>
   );
 }

@@ -14,3 +14,12 @@ export const StyledLink = styled(Link)`
 export const List = styled.ul`
   text-decoration: none;
 `;
+
+export const StyledButton = styled.button`
+  background-color: #0e2f35;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+`;
