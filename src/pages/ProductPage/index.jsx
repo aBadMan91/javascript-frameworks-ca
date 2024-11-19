@@ -19,13 +19,27 @@ export function ProductPage() {
   }
 
   return (
-    <div>
+    <styles.ProductContainer>
       <h1>{product.title}</h1>
-      {product.image ? <img src={product.image.url} alt={product.image.alt} /> : <div>No image available</div>}
-      <p>{product.description}</p>
-      <p>Price: {product.price}</p>
-      {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
-      <button>Add to Cart</button>
-    </div>
+      <styles.ProductImage> {product.image ? <img src={product.image.url} alt={product.image.alt} /> : <div>No image available</div>}</styles.ProductImage>
+      <styles.ProductDescription>
+        <p>{product.description}</p>
+      </styles.ProductDescription>
+      <styles.ProductPrice>
+        {isDiscounted ? (
+          <>
+            <styles.OldPrice>
+              <p>Price: {product.price}</p>
+            </styles.OldPrice>
+            <p>Discounted Price: {product.discountedPrice}</p>
+          </>
+        ) : (
+          <p>Price: {product.price}</p>
+        )}
+      </styles.ProductPrice>
+      <styles.StyledLink to={`/cart/${product.id}`}>
+        <styles.StyledButton>Add to Cart</styles.StyledButton>
+      </styles.StyledLink>
+    </styles.ProductContainer>
   );
 }

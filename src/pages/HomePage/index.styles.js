@@ -9,6 +9,12 @@ export const PageContainer = styled.div`
   margin: 0 auto;
   padding: 20px;
 
+  h1 {
+    padding: 10px;
+    background-color: #0e2f35;
+    border-radius: 8px;
+  }
+
   @media (max-width: 768px) {
     padding: 10px;
   }
@@ -18,7 +24,7 @@ export const ProductGrid = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 1rem;
+  padding: 10px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);

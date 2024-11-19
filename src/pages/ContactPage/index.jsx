@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import * as styles from "./index.styles";
 
 const schema = yup.object({
   fullName: yup.string().min(3, "Full Name must be at least 3 characters").required("Full Name is required"),
@@ -24,31 +25,43 @@ export function ContactPage() {
   };
 
   return (
-    <div>
+    <styles.PageContainer>
       <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Full Name</label>
-          <input type="text" {...register("fullName")} />
-          <p>{errors.fullName?.message}</p>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" {...register("email")} />
-          <p>{errors.email?.message}</p>
-        </div>
-        <div>
-          <label>Subject</label>
-          <input type="text" {...register("subject")} />
-          <p>{errors.subject?.message}</p>
-        </div>
-        <div>
-          <label>Message</label>
-          <textarea {...register("message")} />
-          <p>{errors.message?.message}</p>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      <styles.ContactContainer>
+        <styles.ContactForm>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <label>Full Name:</label>
+              <input type="text" {...register("fullName")} />
+              <styles.ErrorMessage>
+                <p>{errors.fullName?.message}</p>
+              </styles.ErrorMessage>
+            </div>
+            <div>
+              <label>Email:</label>
+              <input type="email" {...register("email")} />
+              <styles.ErrorMessage>
+                <p>{errors.email?.message}</p>
+              </styles.ErrorMessage>
+            </div>
+            <div>
+              <label>Subject:</label>
+              <input type="text" {...register("subject")} />
+              <styles.ErrorMessage>
+                <p>{errors.subject?.message}</p>
+              </styles.ErrorMessage>
+            </div>
+            <div>
+              <label>Message:</label>
+              <textarea {...register("message")} />
+              <styles.ErrorMessage>
+                <p>{errors.message?.message}</p>
+              </styles.ErrorMessage>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </styles.ContactForm>
+      </styles.ContactContainer>
+    </styles.PageContainer>
   );
 }

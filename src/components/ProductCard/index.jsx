@@ -6,14 +6,22 @@ export function ProductCard({ product }) {
 
   return (
     <styles.ProductCardContainer>
-      <styles.ProductImage to={`/product/${product.id}`}>
+      <styles.ProductCardImage to={`/product/${product.id}`}>
         <img src={product.image.url} alt={product.image.alt} />
-      </styles.ProductImage>
+      </styles.ProductCardImage>
       <h2>{product.title}</h2>
-      <styles.ProductInfo>
-        <p>Price: {product.price}</p>
-        {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
-      </styles.ProductInfo>
+      <styles.ProductCardPrice>
+        {isDiscounted ? (
+          <>
+            <styles.OldCardPrice>
+              <p>Price: {product.price}</p>
+            </styles.OldCardPrice>
+            <p>Discounted Price: {product.discountedPrice}</p>
+          </>
+        ) : (
+          <p>Price: {product.price}</p>
+        )}
+      </styles.ProductCardPrice>
       <styles.StyledLink to={`/product/${product.id}`}>
         <styles.StyledButton>View Product</styles.StyledButton>
       </styles.StyledLink>

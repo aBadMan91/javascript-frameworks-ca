@@ -6,7 +6,8 @@ export const ProductCardContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #fff;
+  background-color: #0e2f35;
+  color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
@@ -21,10 +22,11 @@ export const ProductCardContainer = styled.div`
   }
 `;
 
-export const ProductImage = styled(Link)`
+export const ProductCardImage = styled(Link)`
   display: block;
   width: 100%;
   height: 300px;
+  margin-bottom: 10px;
 
   img {
     width: 100%;
@@ -33,7 +35,7 @@ export const ProductImage = styled(Link)`
   }
 `;
 
-export const ProductInfo = styled.div`
+export const ProductCardPrice = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -45,6 +47,11 @@ export const ProductInfo = styled.div`
   }
 `;
 
+export const OldCardPrice = styled.p`
+  text-decoration: line-through;
+  font-style: italic;
+`;
+
 export const StyledLink = styled(Link)`
   text-align: center;
   margin-top: 10px;
@@ -53,7 +60,8 @@ export const StyledLink = styled(Link)`
 export const StyledButton = styled.button`
   background-color: #0e2f35;
   color: #fff;
-  border: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 10px;
   cursor: pointer;
   width: 100%;
