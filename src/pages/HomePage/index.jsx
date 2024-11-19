@@ -1,6 +1,7 @@
 import React from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../../components/ProductCard";
+import * as styles from "./index.styles";
 
 export function HomePage() {
   const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop");
@@ -16,9 +17,9 @@ export function HomePage() {
   }
 
   return (
-    <div>
+    <styles.PageContainer>
       <h1>Products</h1>
-      <ul>{data.length > 0 ? data.map((product) => <ProductCard key={product.id} product={product} />) : <li>No products available</li>}</ul>
-    </div>
+      <styles.ProductGrid>{data.length > 0 ? data.map((product) => <ProductCard key={product.id} product={product} />) : <li>No products available</li>}</styles.ProductGrid>
+    </styles.PageContainer>
   );
 }

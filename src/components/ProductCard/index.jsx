@@ -6,13 +6,14 @@ export function ProductCard({ product }) {
 
   return (
     <styles.ProductCardContainer>
-      <h2>{product.title}</h2>
-      <styles.StyledLink to={`/product/${product.id}`}>
+      <styles.ProductImage to={`/product/${product.id}`}>
         <img src={product.image.url} alt={product.image.alt} />
-      </styles.StyledLink>
-      <p>{product.description}</p>
-      <p>Price: {product.price}</p>
-      {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
+      </styles.ProductImage>
+      <h2>{product.title}</h2>
+      <styles.ProductInfo>
+        <p>Price: {product.price}</p>
+        {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
+      </styles.ProductInfo>
       <styles.StyledLink to={`/product/${product.id}`}>
         <styles.StyledButton>View Product</styles.StyledButton>
       </styles.StyledLink>

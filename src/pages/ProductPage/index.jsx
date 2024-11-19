@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+// import { useCartStore } from "../../components/CartStore";
+import * as styles from "./index.styles";
 
 export function ProductPage() {
   const { id } = useParams();
@@ -23,6 +25,7 @@ export function ProductPage() {
       <p>{product.description}</p>
       <p>Price: {product.price}</p>
       {isDiscounted && <p>Discounted Price: {product.discountedPrice}</p>}
+      <button>Add to Cart</button>
     </div>
   );
 }
