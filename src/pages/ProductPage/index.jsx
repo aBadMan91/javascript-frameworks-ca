@@ -1,12 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
-// import { useCartStore } from "../../components/CartStore";
+import { useCartStore } from "../../store/CartStore/useCartStore";
 import * as styles from "./index.styles";
 
 export function ProductPage() {
   const { id } = useParams();
   const { data: product, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const isDiscounted = product.discountedPrice && product.discountedPrice !== product.price;
 
@@ -37,9 +38,7 @@ export function ProductPage() {
           <p>Price: {product.price}</p>
         )}
       </styles.ProductPrice>
-      <styles.StyledLink to={`/cart/${product.id}`}>
-        <styles.StyledButton>Add to Cart</styles.StyledButton>
-      </styles.StyledLink>
+      <styles.StyledButton onClick={() => addToCart(product)}>Add to Cart</styles.StyledButton>
     </styles.ProductContainer>
   );
 }
