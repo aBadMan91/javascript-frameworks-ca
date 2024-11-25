@@ -13,13 +13,11 @@ export function ProductCard({ product }) {
       <styles.ProductCardPrice>
         {isDiscounted ? (
           <>
-            <styles.OldCardPrice>
-              <p>Price: {product.price}</p>
-            </styles.OldCardPrice>
-            <p>Discounted Price: {product.discountedPrice}</p>
+            <styles.OldCardPrice>Price: {product.price}</styles.OldCardPrice>
+            <span>Discounted Price: {product.discountedPrice}</span>
           </>
         ) : (
-          <p>Price: {product.price}</p>
+          <span>Price: {product.price}</span>
         )}
       </styles.ProductCardPrice>
       <styles.StyledLink to={`/product/${product.id}`}>

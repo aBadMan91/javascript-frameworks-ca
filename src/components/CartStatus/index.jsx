@@ -1,16 +1,17 @@
 import React from "react";
-import { useCartStore } from "../../store/CartStore/useCartStore";
+import { useCartStore } from "../../store/useCartStore";
 import { shallow } from "zustand/shallow";
 
+const useCartStatus = () => {
+  const cart = useCartStore((state) => state.cart, shallow);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const clearCart = useCartStore((state) => state.clearCart);
+
+  return { cart, removeFromCart, clearCart };
+};
+
 export const CartStatus = () => {
-  const { cart, removeFromCart, clearCart } = useCartStore(
-    (state) => ({
-      cart: state.cart,
-      removeFromCart: state.removeFromCart,
-      clearCart: state.clearCart,
-    }),
-    shallow
-  );
+  const { cart, removeFromCart, clearCart } = useCartStatus();
 
   return (
     <div>

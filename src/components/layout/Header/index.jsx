@@ -14,7 +14,9 @@ export function Header() {
       <NavContainer>
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
-        <CartIcon />
+        <Link to="/checkout">
+          <CartIcon />
+        </Link>
       </NavContainer>
     </HeaderContainer>
   );
