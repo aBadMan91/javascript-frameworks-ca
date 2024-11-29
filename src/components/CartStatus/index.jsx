@@ -18,7 +18,11 @@ export const CartStatus = () => {
       <div>Cart items: {cart.length}</div>
       {cart.map((product) => (
         <div key={product.id}>
-          <span>{product.name}</span>
+          <span>
+            {product.title} (x{product.quantity})
+          </span>
+          <span>{product.price}</span>
+          <span>{product.discountedPrice}</span>
           <button onClick={() => removeFromCart(product.id)}>Remove</button>
         </div>
       ))}
