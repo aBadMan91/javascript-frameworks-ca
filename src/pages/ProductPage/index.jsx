@@ -39,6 +39,22 @@ export function ProductPage() {
         )}
       </styles.ProductPrice>
       <styles.StyledButton onClick={() => addToCart(product)}>Add to Cart</styles.StyledButton>
+      <styles.ProductReviews>
+        <h2>User Reviews</h2>
+        {product.reviews && product.reviews.length > 0 ? (
+          product.reviews.map((review) => (
+            <styles.Review key={review.id}>
+              <p>
+                <strong>{review.username}</strong>
+              </p>
+              <p>{review.description}</p>
+              <p>Rating: {review.rating}/5</p>
+            </styles.Review>
+          ))
+        ) : (
+          <p>No reviews yet</p>
+        )}
+      </styles.ProductReviews>
     </styles.ProductContainer>
   );
 }

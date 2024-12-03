@@ -9,6 +9,7 @@ export const PageContainer = styled.div`
     text-align: center;
     background-color: #0e2f35;
     color: white;
+    border-radius: 8px;
   }
 `;
 
