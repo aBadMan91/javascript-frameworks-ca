@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore";
 import * as styles from "./index.styles";
 
-export function CheckoutPage() {
+export function CartPage() {
   const navigate = useNavigate();
   const clearCart = useCartStore((state) => state.clearCart);
+  const cart = useCartStore((state) => state.cart);
 
   const handleCheckoutSuccess = () => {
     clearCart();
@@ -14,10 +15,10 @@ export function CheckoutPage() {
   };
 
   return (
-    <styles.CheckoutContainer>
-      <h1>Checkout</h1>
+    <styles.CartPageContainer>
+      <h1>Cart</h1>
       <CartStatus />
-      <button onClick={handleCheckoutSuccess}>Proceed to Checkout Success</button>
-    </styles.CheckoutContainer>
+      {cart.length > 0 && <styles.StyledButton onClick={handleCheckoutSuccess}>Checkout</styles.StyledButton>}
+    </styles.CartPageContainer>
   );
 }

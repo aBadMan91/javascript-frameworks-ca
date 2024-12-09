@@ -19,19 +19,17 @@ export const CartStatus = () => {
   return (
     <styles.CartContainer>
       <div>Cart items: {cart.length}</div>
+      <styles.ClearCartButton onClick={() => clearCart()}>Clear Cart</styles.ClearCartButton>
       {cart.map((product) => (
         <styles.CartItem key={product.id}>
           <span>
             {product.title} (x{product.quantity})
           </span>
-          <span>{product.price}</span>
-          <span>{product.discountedPrice}</span>
+          {/* <styles.Price>{product.price.toFixed(2)}</styles.Price> */}
+          <styles.Price>{product.discountedPrice.toFixed(2)}</styles.Price>
           <button onClick={() => removeFromCart(product.id)}>Remove</button>
         </styles.CartItem>
       ))}
-      <styles.ClearCart>
-        <button onClick={() => clearCart()}>Clear Cart</button>
-      </styles.ClearCart>
       <styles.TotalPrice>Total Price: {totalPrice.toFixed(2)}</styles.TotalPrice>
     </styles.CartContainer>
   );
