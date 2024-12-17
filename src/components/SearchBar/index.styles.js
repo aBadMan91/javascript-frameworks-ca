@@ -5,11 +5,19 @@ export const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export const SearchInput = styled.input`
   padding: 10px;
   width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SearchResults = styled.div`
@@ -23,6 +31,10 @@ export const SearchResults = styled.div`
   z-index: 1000;
   max-height: 300px;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    max-height: 200px;
+  }
 `;
 
 export const SearchResultItem = styled.div`
@@ -33,5 +45,9 @@ export const SearchResultItem = styled.div`
 
   &:hover {
     background-color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px;
   }
 `;
