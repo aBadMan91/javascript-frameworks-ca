@@ -11,7 +11,7 @@ export function SearchBar() {
 
   useEffect(() => {
     if (products) {
-      const results = products.filter((product) => product.title.toLowerCase().includes(searchQuery.toLowerCase()));
+      const results = products.filter((product) => product.title.toLowerCase().startsWith(searchQuery.toLowerCase()));
       setSearchResults(results);
     }
   }, [searchQuery, products]);
