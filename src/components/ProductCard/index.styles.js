@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const ProductCardContainer = styled.div`
+export const ProductCardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,6 +12,13 @@ export const ProductCardContainer = styled.div`
   border-radius: 8px;
   box-sizing: border-box;
   margin-bottom: 20px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
   h2 {
     margin: 0;
@@ -22,7 +29,7 @@ export const ProductCardContainer = styled.div`
   }
 `;
 
-export const ProductCardImage = styled(Link)`
+export const ProductCardImage = styled.div`
   display: block;
   width: 100%;
   height: 300px;
@@ -50,19 +57,4 @@ export const ProductCardPrice = styled.div`
 export const OldCardPrice = styled.p`
   text-decoration: line-through;
   font-style: italic;
-`;
-
-export const StyledLink = styled(Link)`
-  text-align: center;
-  margin-top: 10px;
-`;
-
-export const StyledButton = styled.button`
-  background-color: #0e2f35;
-  color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  cursor: pointer;
-  width: 100%;
 `;
