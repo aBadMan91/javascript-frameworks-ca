@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../../components/ProductCard";
 import * as styles from "./index.styles";
 
 export function HomePage() {
   const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop");
+
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
 
   console.log(data);
 

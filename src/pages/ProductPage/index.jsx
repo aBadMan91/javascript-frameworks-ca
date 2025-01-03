@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { useCartStore } from "../../store/useCartStore";
@@ -8,6 +8,12 @@ export function ProductPage() {
   const { id } = useParams();
   const { data: product, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`);
   const addToCart = useCartStore((state) => state.addToCart);
+
+  useEffect(() => {
+    if (product) {
+      document.title = product.title;
+    }
+  }, [product]);
 
   const isDiscounted = product.discountedPrice && product.discountedPrice !== product.price;
 

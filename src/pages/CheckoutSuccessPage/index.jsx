@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as styles from "./index.styles";
 
 export function CheckoutSuccessPage() {
+  useEffect(() => {
+    document.title = "Checkout Successful";
+  }, []);
+
   return (
     <styles.CheckoutSuccessContainer>
       <h1>Checkout Successful!</h1>

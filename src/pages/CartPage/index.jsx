@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CartStatus } from "../../components/CartStatus";
 import { useNavigate } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore";
@@ -8,6 +8,10 @@ export function CartPage() {
   const navigate = useNavigate();
   const clearCart = useCartStore((state) => state.clearCart);
   const cart = useCartStore((state) => state.cart);
+
+  useEffect(() => {
+    document.title = "Cart";
+  }, []);
 
   const handleCheckoutSuccess = () => {
     clearCart();
