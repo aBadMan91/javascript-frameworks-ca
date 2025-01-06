@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { useCartStore } from "../../store/useCartStore";
@@ -8,12 +8,21 @@ export function ProductPage() {
   const { id } = useParams();
   const { data: product, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`);
   const addToCart = useCartStore((state) => state.addToCart);
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     if (product) {
       document.title = product.title;
     }
   }, [product]);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setIsAdded(true);
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 3000);
+  };
 
   const isDiscounted = product.discountedPrice && product.discountedPrice !== product.price;
 
@@ -44,7 +53,7 @@ export function ProductPage() {
           <p>Price: {product.price}</p>
         )}
       </styles.ProductPrice>
-      <styles.StyledButton onClick={() => addToCart(product)}>Add to Cart</styles.StyledButton>
+      <styles.StyledButton onClick={() => handleAddToCart(product)}>{isAdded ? "Item was added to Cart" : "Add to Cart"}</styles.StyledButton>
       <styles.ProductReviews>
         <h2>User Reviews</h2>
         {product.reviews && product.reviews.length > 0 ? (

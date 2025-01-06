@@ -15,16 +15,17 @@ export const ProductContainer = styled.div`
 
 export const ProductImage = styled.div`
   display: block;
-  height: 600px;
   margin-bottom: 20px;
 
   img {
     height: 100%;
+    max-width: 100%;
     object-fit: contain;
   }
 
   @media (max-width: 768px) {
-    height: 300px;
+    max-width: 100%;
+    height: auto;
   }
 `;
 
@@ -64,6 +65,14 @@ export const StyledButton = styled.button`
   padding: 10px;
   cursor: pointer;
   border-radius: 8px;
+
+  &:hover {
+    background-color: #0a2328;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   @media (max-width: 768px) {
     width: 100%;

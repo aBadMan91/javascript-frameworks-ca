@@ -1,6 +1,5 @@
 import React from "react";
 import * as styles from "./index.styles";
-import { StarRating } from "../StarRating/";
 
 export function ProductCard({ product }) {
   const isDiscounted = product.discountedPrice && product.discountedPrice !== product.price;
@@ -11,6 +10,7 @@ export function ProductCard({ product }) {
         <img src={product.image.url} alt={product.image.alt} />
       </styles.ProductCardImage>
       <h2>{product.title}</h2>
+      <p>User Rating: {product.rating ? `${product.rating}/5` : "No ratings yet"}</p>
       <styles.ProductCardPrice>
         {isDiscounted ? (
           <>
