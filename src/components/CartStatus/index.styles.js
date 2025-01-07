@@ -9,6 +9,7 @@ export const CartContainer = styled.div`
   width: 50%;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #0e2f35;
 `;
 
 export const CartItem = styled.div`

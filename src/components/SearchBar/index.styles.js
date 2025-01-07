@@ -3,11 +3,9 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
-  padding: 20px;
 
   @media (max-width: 768px) {
-    padding: 10px;
+    padding-bottom: 10px;
   }
 `;
 
@@ -17,6 +15,7 @@ export const SearchInput = styled.input`
 
   @media (max-width: 768px) {
     width: 100%;
+    padding: 5px;
   }
 `;
 
@@ -34,6 +33,7 @@ export const SearchResults = styled.div`
 
   @media (max-width: 768px) {
     max-height: 200px;
+    top: 70%;
   }
 `;
 

@@ -4,12 +4,20 @@ export const PageContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     text-align: center;
     background-color: #0e2f35;
     color: white;
     border-radius: 8px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
   }
 `;
 
@@ -20,18 +28,21 @@ export const ContactContainer = styled.div`
   color: white;
   padding: 20px;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 75%;
+  }
 `;
 
 export const ContactForm = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 
     div {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 2px;
     }
 
     label {

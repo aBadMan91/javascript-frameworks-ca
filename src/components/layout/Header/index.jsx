@@ -16,13 +16,13 @@ export function Header() {
       <Link to="/">
         <h1>North Store</h1>
       </Link>
+      <SearchBar />
       <HamburgerMenu onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </HamburgerMenu>
       <NavContainer isOpen={isOpen}>
-        <SearchBar />
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/cart">
