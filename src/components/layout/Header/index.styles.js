@@ -33,8 +33,17 @@ export const NavContainer = styled.nav`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 100%;
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #0e2f35;
+    padding: 10px;
+    width: 25%;
+  }
+
+  a {
+    margin: 6px;
   }
 `;
 
