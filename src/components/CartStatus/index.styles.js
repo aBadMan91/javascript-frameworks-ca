@@ -42,6 +42,10 @@ export const ClearCartButton = styled.button`
   }
 `;
 
+export const RemoveButton = styled.button`
+  cursor: pointer;
+`;
+
 export const TotalPrice = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;

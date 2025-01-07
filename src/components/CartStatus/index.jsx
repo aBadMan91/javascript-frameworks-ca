@@ -25,9 +25,8 @@ export const CartStatus = () => {
           <span>
             {product.title} (x{product.quantity})
           </span>
-          {/* <styles.Price>{product.price.toFixed(2)}</styles.Price> */}
           <styles.Price>{product.discountedPrice.toFixed(2)}</styles.Price>
-          <button onClick={() => removeFromCart(product.id)}>Remove</button>
+          <styles.RemoveButton onClick={() => removeFromCart(product.id)}>Remove</styles.RemoveButton>
         </styles.CartItem>
       ))}
       <styles.TotalPrice>Total Price: {totalPrice.toFixed(2)}</styles.TotalPrice>
