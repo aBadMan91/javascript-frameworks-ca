@@ -1,6 +1,6 @@
 # North Store
 
-![Image of North Store](./src/img/North%20Store.png)
+<img src="./img/North-Store.jpg" alt="Image of North Store website" width="500" />
 
 ## Description
 
